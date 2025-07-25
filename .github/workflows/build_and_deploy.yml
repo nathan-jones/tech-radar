@@ -68,6 +68,12 @@ jobs:
 
       - name: Copy & Write
         run: |
+          echo $(ls -la)
+          tree
+
+
+      - name: Copy & Write
+        run: |
           echo $(ls)
           echo $(ls _site)
           echo $(ls /home/runner/work/tech-radar)
