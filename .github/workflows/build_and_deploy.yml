@@ -66,22 +66,13 @@ jobs:
           source: docs
           destination: _site
 
-      - name: Copy & Write
+      - name: Lets see what we got
         run: |
-          echo $(ls -la)
           tree
 
-
       - name: Copy & Write
         run: |
-          echo $(ls)
-          echo $(ls _site)
-          echo $(ls /home/runner/work/tech-radar)
-          echo $(pwd)
-          echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
-          echo "github.workspace ${{github.workspace}}"
-          sudo chmod -R u+w _site || true
-          cp -R build/* _site/radar
+          mv build _site/radar
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
